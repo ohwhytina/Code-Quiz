@@ -29,7 +29,7 @@ var questionList = 0
 function startquiz() {
 
     //start timer 
-    tim
+    timer
 }
 
 
