@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="./asset/css/style.css" />
+    <script src="./asset/js/script.js"></script>
   </head>
+
   <body>
     <div class="wrapper">
       <header>
         <a href="#"><p>View Highscores</p></a>
-        <p id="timer">Timer</p>
+        <p id="timer">Time: <span id="timeLeft"></span></p>
       </header>
 
-      <div class="card">
-        <div class="card-header">
+      <div class="quiz">
+        <div class="quiz-body">
           <h2>Code Quiz</h2>
           <h3>Test your knowledge in coding with a short quiz.</h3>
         </div>
-        <div class="card-footer">
-          <button id="start-quiz" class="btn">Begin Quiz</button>
-        </div>
+          <button class=btn onclick="startTimer()">Begin Quiz</button>
       </div>
-    </div>
-    <script src="./asset/js/script.js"></script>
+   
   </body>
 </html>

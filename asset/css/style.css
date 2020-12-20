@@ -40,7 +40,7 @@ header p{
     font-weight: bold;
 }
 
-.card {
+.quiz {
     color: hsl(206, 17%, 28%);
     font-size: 18px;
     margin: 0 auto;
@@ -49,34 +49,11 @@ header p{
     text-align: center;
   }
   
-  .card-header::after {
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 2px;
-  }
   
-  .card-body {
+  .quiz-body {
     min-height: 100px;
   }
   
-  .card-footer {
-    text-align: center;
-  }
-  
-  .card-footer::before {
-    content: " ";
-    display: block;
-    width: 100%;
-
-    height: 2px;
-  }
-  
-  .card-footer::after {
-    content: " ";
-    display: block;
-    clear: both;
-  }
   
   .btn {
     border: none;
