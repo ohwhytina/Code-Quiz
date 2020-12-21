@@ -21,11 +21,12 @@ var questions = [
     }
 ];
 
-//keep track of score
+//declared variables
 var score = 0; 
 var currentQuestion = -1
 var timeLeft = 75;
 var timer;
+
 
 // function to start the time
 function startTimer() {
@@ -69,7 +70,6 @@ function startQuiz() {
         questionContent += buttonChoice
     }
 
-
     document.getElementById("quizBody").innerHTML = questionContent
 };
 
@@ -106,27 +106,16 @@ function setScore() {
 
     var scoreObject = {name: userName, score: highScore};
 
-    var highScores = localStorage.getItem("highScorelist"); 
+    var highScores = localStorage.getItem("highScores");
 
-    if (highScores == null) {
-        localStorage.setItem("highScoreList", JSON.stringify([scoreObject]));
-        console.log(highScores);
-      } else {
-        highScoreList = JSON.parse(highScores);
-        console.log(typeof highScoreList);
-        highScoreList.push(scoreObject);
-        localStorage.setItem("highScoreList", JSON.stringify(highScoreList));
-      }
-      window.location.replace("./highscore.html");
+    if (highScores === null) {
+        highScores = [];
+    } else {
+        highScores = JSON.parse(highScores);   
     }
-    
-    //clear all scores
-    function clearScore() {
-        localStorage.clear()
-        location.reload();
-    }
+    highScores.push(scoreObject);
+    var addScore = JSON.stringify(highScores);
+    localStorage.setItem("highScores", addScore);
 
-
-    
-    
-
+    window.location.replace("./highscore.html");
+}

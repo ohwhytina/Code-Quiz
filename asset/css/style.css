@@ -34,6 +34,18 @@ a {
     text-decoration: none;
 }
 
+ul li{
+  list-style-type: none;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+li {
+  font-size: 20px;
+  font-weight: bold
+}
+
 header p{
     font-size: 20px;
     color: hsl(206, 17%, 28%);
