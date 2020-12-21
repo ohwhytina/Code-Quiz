@@ -12,6 +12,6 @@ A website to take a timed quiz on Javascript fundamentals that stores high score
 https://ohwhytina.github.io/Code-Quiz/
 
 ## Video 
-![](<iframe src="https://drive.google.com/file/d/1bzA1MZRyKuMetGwAdp3p-sOcXbshLfcM/preview" width="640" height="480"></iframe>)
+![Code-Quiz Demo](https://raw.githubusercontent.com/ohwhytina/Code-Quiz/master/demo/Code%20Quiz.gif)
 
 
