@@ -45,21 +45,6 @@ function startTimer() {
     startQuiz();
 };
 
-//stop the timer to end the game 
-function endGame() {
-    clearInterval(timer);
-
-    var endingContent = 
-    "<h2>" + "Game over!" + "</h2>" +
-    "<h3>" + "You got a " + score +  "/5" + " questions correct!" + "</h3>" +
-    `<input type="text" id="name" placeholder="Enter name">
-    <button onclick="setScore()">Set score!</button>`;
-
-    document.getElementById("quizBody").innerHTML = endingContent;
-}
-
-
-
 function startQuiz() {
     currentQuestion++;
 
@@ -99,3 +84,49 @@ function correct() {
     score += 1;
     startQuiz();
 }
+
+//end game page
+function endGame() {
+    clearInterval(timer);
+
+    var endingContent = 
+    "<h2>" + "Game over!" + "</h2>" +
+    "<h3>" + "You got a " + score +  "/5" + " questions correct!" + "</h3>" +
+    `<input type="text" id="name" placeholder="Enter name">
+    <button onclick="setScore()">Set score!</button>`;
+
+    document.getElementById("quizBody").innerHTML = endingContent;
+}
+
+//store the scores on local storage
+function setScore() {
+ 
+    var userName = document.getElementById('name').value;
+    var highScore = score;
+
+    var scoreObject = {name: userName, score: highScore};
+
+    var highScores = localStorage.getItem("highScorelist"); 
+
+    if (highScores == null) {
+        localStorage.setItem("highScoreList", JSON.stringify([scoreObject]));
+        console.log(highScores);
+      } else {
+        highScoreList = JSON.parse(highScores);
+        console.log(typeof highScoreList);
+        highScoreList.push(scoreObject);
+        localStorage.setItem("highScoreList", JSON.stringify(highScoreList));
+      }
+      window.location.replace("./highscore.html");
+    }
+    
+    //clear all scores
+    function clearScore() {
+        localStorage.clear()
+        location.reload();
+    }
+
+
+    
+    
+
